@@ -1,0 +1,23 @@
+{
+	"name": "passport-data-app",
+	"version": "1.0.0",
+	"description": "Application for managing passport data",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"start": "node server.js",
+		"dev": "nodemon server.js"
+	},
+	"author": "",
+	"dependencies": {
+		"express": "^5.1.0",
+		"multer": "^1.4.5-lts.2",
+		"fs-extra": "^11.3.0",
+		"xml2js": "^0.6.2",
+		"uuid": "^11.1.0",
+		"cors": "^2.8.5"
+	},
+	"devDependencies": {
+		"nodemon": "^3.1.9"
+	}
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Passport Data Management</title>
+		<link rel="stylesheet" href="/css/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Passport Data Form</h1>
+
+			<form id="passportForm" enctype="multipart/form-data">
+				<input type="hidden" id="recordId" name="id" />
+
+				<div class="form-group">
+					<label for="lastName">Last Name (Прізвище):</label>
+					<input type="text" id="lastName" name="lastName" required />
+				</div>
+
+				<div class="form-group">
+					<label for="firstName">First Name (Ім'я):</label>
+					<input
+						type="text"
+						id="firstName"
+						name="firstName"
+						required
+					/>
+				</div>
+
+				<div class="form-group">
+					<label for="middleName">Middle Name (По батькові):</label>
+					<input
+						type="text"
+						id="middleName"
+						name="middleName"
+						required
+					/>
+				</div>
+
+				<div class="form-group">
+					<label for="address">Address (Адреса):</label>
+					<textarea id="address" name="address" required></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="idNumber"
+						>Identification Number (Ідентифікаційний номер):</label
+					>
+					<input
+						type="text"
+						id="idNumber"
+						name="idNumber"
+						pattern="[0-9]{10}"
+						title="ID number must be 10 digits"
+						required
+					/>
+				</div>
+
+				<div class="form-group">
+					<label for="photo">Photo (Фото):</label>
+					<input
+						type="file"
+						id="photo"
+						name="photo"
+						accept="image/*"
+					/>
+					<div id="photoPreview" class="photo-preview"></div>
+				</div>
+
+				<div class="form-buttons">
+					<button type="submit" id="saveBtn">Save</button>
+					<button type="button" id="resetBtn">New Record</button>
+				</div>
+			</form>
+
+			<div class="data-section">
+				<h2>Records</h2>
+				<div class="format-buttons">
+					<button id="showJsonBtn">View JSON</button>
+					<button id="showXmlBtn">View XML</button>
+				</div>
+
+				<table id="recordsTable">
+					<thead>
+						<tr>
+							<th>Full Name</th>
+							<th>ID Number</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="recordsList">
+						<!-- Records will be populated here -->
+					</tbody>
+				</table>
+
+				<div id="dataView" class="data-view">
+					<pre id="dataContent"></pre>
+				</div>
+			</div>
+		</div>
+
+		<script src="/js/main.js"></script>
+	</body>
+</html>
